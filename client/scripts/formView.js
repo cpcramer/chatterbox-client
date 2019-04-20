@@ -10,12 +10,12 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     
-    console.log('click!');
     let userName = App.username;
     let myTweet = $('#message').val();
     let newTweet = $("<div class='chat'><div class='username'><h3>" + userName + "</h3></div><div class='text'><h5> " + myTweet + "</h5></div></div>")
     // {class: 'chat'}
-    $('#chats').prepend(newTweet);
+    Messages.addMessage();
+    // $('#chats').prepend(newTweet);
   },
 
   setStatus: function(active) {

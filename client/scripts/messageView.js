@@ -1,6 +1,6 @@
 var MessageView = {
 
-  render: _.template(
+  renderMessage: _.template(
 
       `
       <div class="chat">
@@ -14,6 +14,7 @@ var MessageView = {
             <%- text %>
           </h5>
         </div>
+
       </div>
       `  
     )

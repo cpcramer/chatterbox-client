@@ -3,10 +3,11 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function(data) {
-    this.render(data);
+
+    this.renderMessage(data);
   },
 
-  render: function(data) {
+  renderMessage: function(data) {
     let i;
     let html = '';
     let tweets = data.results;
@@ -14,7 +15,9 @@ var MessagesView = {
     
     for (i = 0; i < tweets.length; i++) {
       if (tweets[i].text !== undefined && tweets[i].text !== '' && tweets[i].username !== undefined) {
-      html += MessageView.render({username: tweets[i].username, text: tweets[i].text});
+      var newName = tweets[i].username.replace(/%20/g, ' ');
+
+      html += MessageView.renderMessage({username: newName, text: tweets[i].text, roomname: tweets[i].roomname});
       }
     }
     $('#chats').append(html);

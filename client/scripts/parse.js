@@ -4,11 +4,11 @@ var Parse = {
 
   create: function(message, successCB, errorCB = null) {
     // todo: save a message to the server
+    console.log(message);
     $.ajax({
       url: Parse.server,
       type: 'POST',
       data: JSON.stringify(message),
-      // datatype: 'json',
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
@@ -22,7 +22,6 @@ var Parse = {
       url: Parse.server,
       type: 'GET',
       data: { order: '-createdAt' },
-      // datatype: 'json',
       contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
