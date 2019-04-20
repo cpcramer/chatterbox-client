@@ -10,7 +10,7 @@ var MessagesView = {
     let i;
     let html = '';
     let tweets = data.results;
-    console.log(tweets);
+    // console.log(tweets);
     
     for (i = 0; i < tweets.length; i++) {
       if (tweets[i].text !== undefined && tweets[i].text !== '' && tweets[i].username !== undefined) {
